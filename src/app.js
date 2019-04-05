@@ -22,7 +22,7 @@ window.GIPP = {
 			Arma 3 UI count icon scale relative to in-game Inventory UI, not image itself. 
 			This modifier should handle In-game scale to HTML scale (to save in-game scale, but draw icons in HTML properly)
 		*/
-		, multiplier: 1 
+		, multiplier: 2 
 	}
 	, proxies: [
 		 "top"
@@ -154,8 +154,8 @@ window.GIPP = {
 		let gunIcon = "#icon-gun";
 
 		let proxyPos = $(proxyIcon).position();
-		let proxyW = $(proxyIcon).width() * this.scale[proxy];
-		let proxyH = $(proxyIcon).height() * this.scale[proxy];
+		let proxyW = $(proxyIcon).width() * (this.scale[proxy] * this.scale.multiplier);
+		let proxyH = $(proxyIcon).height() * (this.scale[proxy] * this.scale.multiplier);
 		let proxyCenterX = proxyPos.left + proxyW/2;
 		let proxyCenterY = proxyPos.top + proxyH/2;
 
@@ -183,13 +183,20 @@ window.GIPP = {
 	, updateProxyConfigInfo: function () {
 		for (let i = 0; i < this.proxies.length; i++) {
 			let proxy = this.proxies[i];
+			let scale = this.scale[proxy];
 			let posInfo = this.getProxyPosition(proxy);
 
 			let posX = Math.round(posInfo[0] * 1000) / 1000;
 			let posY = Math.round(posInfo[1] * 1000) / 1000;
+			
 			let pic = this.proxiesPaa[i];
 
-			let output = '{<br />	iconPinpoint="center";<br />	iconPosition[] = {' + posX + ',' + posY + '}; <br />	iconPicture = "' + pic + '";<br />};'
+			let output = '{' +
+				'<br />	iconPinpoint="center";' +
+				'<br />	iconPosition[] = {' + posX + ',' + posY + '};' + 
+				'<br />	iconScale  = ' + scale + ';' + 
+				'<br />	iconPicture = "' + pic + '";' + 
+				'<br />};'
 
 			$("#output-" + proxy + " > div").html(output);
 		}
@@ -229,11 +236,3 @@ $( document ).ready(function() {
 
 	GIPP.init();
 });
-
-/*
-	Move via:
-		
-		
-
-
-*/
