@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>A3GIPP/Arma 3 Gun Icon Proxy Positioner</title>
+		
+		<link rel="stylesheet" href="src/style.css">
+		<script src="src/jquery-3.3.1.min.js"></script>
+		<script src="src/app.js"></script>
+
+	</head>
+	<body>
+		<div id="top-panel">
+			<div>
+				Image file: <input id="uploader" type="file" name='uploader' onchange="GIPP.openFile(event)" />
+			</div>
+		</div>
+		<div id="central-panel">
+			<div id="button-panel">
+				<div class="col-2">
+					<input id="scale-top" mode="top" type="number" step="0.01" min="0" max="1" value="0.25"></input>
+					<button id="btn-top" mode="top">+top</button>
+				</div>
+				<div class="col-2">
+					<input id="scale-side" mode="side" type="number" step="0.01" min="0" max="1" value="0.25"></input>
+					<button id="btn-side" mode="side">+side</button>
+				</div>
+				<div class="col-2">
+					<input id="scale-muzzle" mode="muzzle" type="number" step="0.01" min="0" max="1" value="0.25"></input>
+					<button id="btn-muzzle" mode="muzzle">+muzzle</button>
+				</div>
+				<div class="col-2">
+					<input id="scale-bipod" mode="bipod" type="number" step="0.01" min="0" max="1" value="0.25"></input>
+					<button id="btn-bipod" mode="bipod">+bipod</button>
+				</div>
+			</div>
+			<br />
+			<div id="image-panel">
+				<img id="icon-gun" src="src\icons\gun_icon.png">
+
+				<img id="icon-top" class="icon-draggable" src="src\icons\attachment_top.png">
+				<img id="icon-side" class="icon-draggable" src="src\icons\attachment_side.png">
+				<img id="icon-muzzle" class="icon-draggable" src="src\icons\attachment_muzzle.png">
+				<img id="icon-bipod" class="icon-draggable" src="src\icons\attachment_under.png">
+
+			</div>
+		</div>
+		<hr />
+		<div id="bottom-panel">
+			Config:
+
+			<div id="output-top">Top:<div class="output-panel"></div></div>
+			<div id="output-side">Side:<div class="output-panel"></div></div>
+			<div id="output-muzzle">Muzzle:<div class="output-panel"></div></div>
+			<div id="output-bipod">Bipod:<div class="output-panel"></div></div>
+		</div>
+		
+
+	</body>
+</html>
+

@@ -1,0 +1,45 @@
+body {
+	background-color: #ccc;
+}
+body > div {
+	padding: 10px;
+}
+
+
+.col-2 {
+	display: inline-block;
+	width: 72px;
+}
+
+#button-panel > .col-2 > input, button {
+	width: 64px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 0px;
+	text-align: center;
+}
+
+#image-panel {
+	display: block;
+	height: 256px;
+	margin-left: 48px;
+}
+#image-panel > img  {
+	position: absolute;
+}
+#icon-gun {
+	border: 1px solid black;
+}
+
+.icon-draggable {
+	cursor: move;
+}
+
+.output-panel {
+	background-color: antiquewhite;
+	min-height: 16px;
+	border-radius: 10px;
+	padding: 12px;
+	font-family: monospace;
+	white-space: pre-wrap;
+}
