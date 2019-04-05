@@ -1,5 +1,7 @@
 body {
 	background-color: #ccc;
+	font-size: 14px;
+	font-family: serif;
 }
 body > div {
 	padding: 10px;
@@ -42,4 +44,5 @@ body > div {
 	padding: 12px;
 	font-family: monospace;
 	white-space: pre-wrap;
+	font-size: 12px;
 }
