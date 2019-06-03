@@ -8,6 +8,7 @@ $(window).bind('mousewheel DOMMouseScroll', function(event){
     else {
 		// scroll down
 		GIPP.draggable.dragScale(false);
+		
     }
 });
 
@@ -112,6 +113,9 @@ window.GIPP = {
 		, dragElement: function (e) {
 			e = e || window.event;
 			e.preventDefault();
+			
+			// Disable overflow of page 
+			$("body").css({"overflow": "hidden"});
 
 			// calculate the new cursor position:
 			GIPP.draggable.dragPos1 = GIPP.draggable.dragPos3 - e.clientX;
@@ -137,6 +141,9 @@ window.GIPP = {
 			document.onmouseup = null;
 			document.onmousemove = null;
 			GIPP.draggable.dragActiveElement = null;
+			
+			// Enable overflow of page 
+			$("body").css({"overflow": ""});
 		}
 	}
 

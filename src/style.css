@@ -7,7 +7,6 @@ body > div {
 	padding: 10px;
 }
 
-
 .col-2 {
 	display: inline-block;
 	width: 72px;
@@ -21,6 +20,10 @@ body > div {
 	text-align: center;
 }
 
+#central-panel {
+	padding: 0px;
+}
+
 #image-panel {
 	display: block;
 	height: 256px;
@@ -31,10 +34,16 @@ body > div {
 }
 #icon-gun {
 	border: 1px solid black;
+	max-width: 512px;
+	max-height: 256px;
 }
 
 .icon-draggable {
 	cursor: move;
+}
+
+#bottom-panel {
+	font-family: monospace;
 }
 
 .output-panel {
